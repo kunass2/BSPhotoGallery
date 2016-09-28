@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="msy-ha-f7I" customClass="PhotoViewController" customModule="BSPhotoGallery" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="8uu-73-etY"/>
+                <viewControllerLayoutGuide type="bottom" id="TQd-hi-OUe"/>
+            </layoutGuides>
+            <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="bf1-TG-dJO">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mU9-0a-WwL"/>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="mU9-0a-WwL" secondAttribute="bottom" id="Ck7-Du-md1"/>
+                    <constraint firstItem="mU9-0a-WwL" firstAttribute="leading" secondItem="bf1-TG-dJO" secondAttribute="leading" id="D2L-eh-lXZ"/>
+                    <constraint firstItem="mU9-0a-WwL" firstAttribute="top" secondItem="bf1-TG-dJO" secondAttribute="top" id="Pbs-fB-x0p"/>
+                    <constraint firstAttribute="trailing" secondItem="mU9-0a-WwL" secondAttribute="trailing" id="yTg-Tb-5Gl"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="photoImageView" destination="mU9-0a-WwL" id="gDz-w5-jYH"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="45"/>
+        </viewController>
+    </objects>
+</document>

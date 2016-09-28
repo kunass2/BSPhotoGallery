@@ -1,0 +1,6 @@
+framework module BSPhotoGallery {
+  umbrella header "BSPhotoGallery-umbrella.h"
+
+  export *
+  module * { export * }
+}

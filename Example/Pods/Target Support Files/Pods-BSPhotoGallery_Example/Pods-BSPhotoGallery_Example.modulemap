@@ -1,0 +1,6 @@
+framework module Pods_BSPhotoGallery_Example {
+  umbrella header "Pods-BSPhotoGallery_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
