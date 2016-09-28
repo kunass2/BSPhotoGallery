@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
+
+enum Method {
+    
+    case image
+    case string
+}
 
 open class GalleryViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
@@ -15,14 +22,19 @@ open class GalleryViewController: UIViewController, UIPageViewControllerDataSour
     var images = [UIImage?]() {
         
         didSet {
-            
-            if let controller = controller(at: currentPhotoViewControllerIndex) {
-                pageViewController.setViewControllers([controller], direction: .reverse, animated: true)
-            }
+            setInitialController()
+        }
+    }
+    
+    var urls = [String]() {
+        
+        didSet {
+            setInitialController()
         }
     }
     
     var currentPhotoViewControllerIndex = 0
+    var method = Method.image
     
     //MARK: - Class Methods
     
@@ -55,14 +67,45 @@ open class GalleryViewController: UIViewController, UIPageViewControllerDataSour
     
     //MARK: - Private
     
+    private func setInitialController() {
+        
+        if let controller = controller(at: currentPhotoViewControllerIndex) {
+            pageViewController.setViewControllers([controller], direction: .reverse, animated: true)
+        }
+    }
+    
     private func controller(at index: Int) -> UIViewController? {
         
-        if case 0..<images.count = index {
+        var count = 0
+        
+        if case .image = method {
+            
+            count = images.count
+            
+        } else if case .string = method {
+            
+            count = urls.count
+        }
+        
+        if case 0..<count = index {
             
             let photoViewController = UINib(nibName: "PhotoViewController", bundle: Bundle(for: PhotoViewController.classForCoder())).instantiate(withOwner: nil, options: nil).first as! PhotoViewController
             
             photoViewController.index = index
-            photoViewController.photoImageView.image = images[index]
+            
+            if case .image = method {
+                
+                photoViewController.photoImageView.image = images[index]
+                
+            } else if case .string = method {
+                
+                if let url = URL(string: urls[index]) {
+                    
+                    photoViewController.photoImageView.sd_setImage(with: url) { (image, _, _, _) in
+                        photoViewController.updateContentMode()
+                    }
+                }
+            }
             
             return photoViewController
         }

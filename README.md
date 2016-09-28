@@ -1,15 +1,8 @@
 # BSPhotoGallery
 
-[![CI Status](http://img.shields.io/travis/Bartłomiej Semańczyk/BSPhotoGallery.svg?style=flat)](https://travis-ci.org/Bartłomiej Semańczyk/BSPhotoGallery)
-[![Version](https://img.shields.io/cocoapods/v/BSPhotoGallery.svg?style=flat)](http://cocoapods.org/pods/BSPhotoGallery)
-[![License](https://img.shields.io/cocoapods/l/BSPhotoGallery.svg?style=flat)](http://cocoapods.org/pods/BSPhotoGallery)
-[![Platform](https://img.shields.io/cocoapods/p/BSPhotoGallery.svg?style=flat)](http://cocoapods.org/pods/BSPhotoGallery)
-
-## Example
+## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
@@ -20,10 +13,39 @@ it, simply add the following line to your Podfile:
 pod "BSPhotoGallery"
 ```
 
-## Author
+If you used `use_framework` in your podfile just simply do:
 
-Bartłomiej Semańczyk, bartlomiej.semanczyk@railwaymen.org
+```Swift
+import BSPhotoGallery
 
-## License
+```
 
-BSPhotoGallery is available under the MIT license. See the LICENSE file for more info.
+for every file when you need to use it.
+
+you may also use:
+
+```Swift
+@import BSPhotoGallery
+
+```
+within **bridging header** file and avoid to import framework for every needed file.
+
+##Usage
+
+######Simply create your gallery object using array of strings
+
+```
+let gallery = BSPhotoGallery(urls: urls).controller()
+```
+
+######or using array of images
+
+```
+let gallery = BSPhotoGallery(images: images).controller()
+```
+
+######then just present your gallery
+
+```
+present(gallery, animated: true)
+```

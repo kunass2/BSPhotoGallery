@@ -42,6 +42,10 @@ open class PhotoViewController: UIViewController {
     
     //MARK: - Internal
     
+    func updateContentMode() {
+        updateContentMode(for: view.bounds.size)
+    }
+    
     //MARK: - Private
     
     private func updateContentMode(for size: CGSize) {

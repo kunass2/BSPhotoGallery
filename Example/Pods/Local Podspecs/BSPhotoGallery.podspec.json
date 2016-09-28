@@ -1,6 +1,6 @@
 {
   "name": "BSPhotoGallery",
-  "version": "0.1.0",
+  "version": "0.1",
   "summary": "Quick and smart preview of your photos in latest Swift version.",
   "description": "Preview, pinch and zoom your gallery just right on your screen.",
   "homepage": "https://github.com/kunass2/BSPhotoGallery",
@@ -13,19 +13,14 @@
   },
   "source": {
     "git": "https://github.com/kunass2/BSPhotoGallery.git",
-    "tag": "0.1.0"
+    "tag": "0.1"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "BSPhotoGallery/Classes/**/*",
-  "resource_bundles": {
-    "BSPhotoGallery": [
-      "BSPhotoGallery/Assets/*.{storyboard}"
-    ]
-  },
   "dependencies": {
-    "SVProgressHUD": [
+    "SDWebImage": [
 
     ]
   }

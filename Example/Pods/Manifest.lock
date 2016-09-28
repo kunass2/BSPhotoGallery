@@ -1,7 +1,9 @@
 PODS:
-  - BSPhotoGallery (0.1.0):
-    - SVProgressHUD
-  - SVProgressHUD (2.0.3)
+  - BSPhotoGallery (0.1):
+    - SDWebImage
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
   - BSPhotoGallery (from `../`)
@@ -11,8 +13,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BSPhotoGallery: 4c818bb66177fdd9a754e663a7f0fc0c838435ba
-  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  BSPhotoGallery: dfdac3e7d65033cb27dd939a08c481bb040c7635
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
 PODFILE CHECKSUM: 3f7adbf3e891a6b28e856f2c5e2bdbcaf9a633ff
 

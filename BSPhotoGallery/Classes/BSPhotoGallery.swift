@@ -12,14 +12,24 @@ open class BSPhotoGallery {
     
     open static var backgroundColor = UIColor.black
     
-    private let galleryViewController: GalleryViewController!
+    private lazy var galleryViewController: GalleryViewController = {
+        return UINib(nibName: "GalleryViewController", bundle: Bundle(for: GalleryViewController.classForCoder())).instantiate(withOwner: nil, options: nil).first as! GalleryViewController
+    }()
     
     public init(images: [UIImage?], currentIndex: Int = 0) {
+        
+        galleryViewController.currentPhotoViewControllerIndex = currentIndex
+        galleryViewController.method = .image
+        galleryViewController.images = images
+    }
+    
+    public init(urls: [String], currentIndex: Int = 0) {
         
         galleryViewController = UINib(nibName: "GalleryViewController", bundle: Bundle(for: GalleryViewController.classForCoder())).instantiate(withOwner: nil, options: nil).first as! GalleryViewController
         
         galleryViewController.currentPhotoViewControllerIndex = currentIndex
-        galleryViewController.images = images
+        galleryViewController.method = .string
+        galleryViewController.urls = urls
     }
     
     open func controller() -> GalleryViewController {
