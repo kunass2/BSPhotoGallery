@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BSPhotoGallery'
-  s.version          = '0.2'
+  s.version          = '0.4'
   s.summary          = 'Quick and smart preview of your photos in latest Swift version.'
 
   s.description      = 'Preview, pinch and zoom your gallery just right on your screen.'

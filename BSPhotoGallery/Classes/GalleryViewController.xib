@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                <accessibility key="accessibilityConfiguration" identifier="photoGallery"/>
+                <accessibility key="accessibilityConfiguration" identifier="photoGalleryView"/>
                 <gestureRecognizers/>
                 <connections>
                     <outletCollection property="gestureRecognizers" destination="eJH-c9-h4J" appends="YES" id="wHc-XS-Y5U"/>

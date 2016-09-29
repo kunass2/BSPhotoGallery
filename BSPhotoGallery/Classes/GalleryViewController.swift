@@ -58,7 +58,10 @@ open class GalleryViewController: UIViewController, UIPageViewControllerDataSour
     //MARK: - Actions
     
     @IBAction func viewSwipedDown(_ sender: UISwipeGestureRecognizer) {
-        dismiss(animated: true)
+        
+        if navigationController == nil {
+            dismiss(animated: true)
+        }
     }
     
     //MARK: - Open
@@ -74,7 +77,7 @@ open class GalleryViewController: UIViewController, UIPageViewControllerDataSour
         }
     }
     
-    private func controller(at index: Int) -> UIViewController? {
+    private func controller(at index: Int) -> PhotoViewController? {
         
         var count = 0
         
@@ -96,6 +99,7 @@ open class GalleryViewController: UIViewController, UIPageViewControllerDataSour
             if case .image = method {
                 
                 photoViewController.photoImageView.image = images[index]
+                photoViewController.updateContentMode()
                 
             } else if case .string = method {
                 

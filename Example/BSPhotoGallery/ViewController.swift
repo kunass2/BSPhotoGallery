@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         UIImage(named: "5"),
         UIImage(named: "6"),
         UIImage(named: "7"),
-        UIImage(named: "8")
+        UIImage(named: "8"),
+        UIImage(named: "9")
     ]
     
     private var urls = [
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
     
     @IBAction func showGalleryButtonTapped(_ sender: UIButton) {
         
-        let gallery = BSPhotoGallery(urls: urls).controller()
+        let gallery = BSPhotoGallery(images: images).controller()
         present(gallery, animated: true)
     }
 }

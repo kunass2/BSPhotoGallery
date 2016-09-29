@@ -17,18 +17,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mU9-0a-WwL"/>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="SdB-Jd-6Un">
+                        <frame key="frameInset" width="375" height="667"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mU9-0a-WwL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="664"/>
+                            </imageView>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mU9-0a-WwL" secondAttribute="trailing" id="2BS-Mu-JGj"/>
+                            <constraint firstAttribute="bottom" secondItem="mU9-0a-WwL" secondAttribute="bottom" id="jlW-G1-yK3"/>
+                            <constraint firstItem="mU9-0a-WwL" firstAttribute="leading" secondItem="SdB-Jd-6Un" secondAttribute="leading" id="qS2-OD-3Fd"/>
+                            <constraint firstItem="mU9-0a-WwL" firstAttribute="top" secondItem="SdB-Jd-6Un" secondAttribute="top" id="rfa-wQ-nD9"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="msy-ha-f7I" id="t0i-jh-ke6"/>
+                        </connections>
+                    </scrollView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="mU9-0a-WwL" secondAttribute="bottom" id="Ck7-Du-md1"/>
-                    <constraint firstItem="mU9-0a-WwL" firstAttribute="leading" secondItem="bf1-TG-dJO" secondAttribute="leading" id="D2L-eh-lXZ"/>
-                    <constraint firstItem="mU9-0a-WwL" firstAttribute="top" secondItem="bf1-TG-dJO" secondAttribute="top" id="Pbs-fB-x0p"/>
-                    <constraint firstAttribute="trailing" secondItem="mU9-0a-WwL" secondAttribute="trailing" id="yTg-Tb-5Gl"/>
+                    <constraint firstAttribute="trailing" secondItem="SdB-Jd-6Un" secondAttribute="trailing" id="4su-XG-ExU"/>
+                    <constraint firstItem="SdB-Jd-6Un" firstAttribute="leading" secondItem="bf1-TG-dJO" secondAttribute="leading" id="AHz-kc-U6e"/>
+                    <constraint firstAttribute="bottom" secondItem="SdB-Jd-6Un" secondAttribute="bottom" id="C1d-6p-Hhu"/>
+                    <constraint firstItem="SdB-Jd-6Un" firstAttribute="top" secondItem="bf1-TG-dJO" secondAttribute="top" id="JTb-Qf-qia"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="photoImageView" destination="mU9-0a-WwL" id="gDz-w5-jYH"/>
+                <outlet property="scrollView" destination="SdB-Jd-6Un" id="TDT-Y5-gnF"/>
             </connections>
             <point key="canvasLocation" x="34" y="45"/>
         </viewController>
